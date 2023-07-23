@@ -1,0 +1,21 @@
+{
+    "name": "Next Ts",
+    // コンテナ起動に使用するDocker Composeファイル
+    "dockerComposeFile": "../compose.yml",
+    // Dev containerとして起動するDocker Composeサービス
+    "service": "app",
+    // ワークスペースディレクトリ
+    "workspaceFolder": "/app",
+    "forwardPorts": [3000],
+    // インストールする拡張機能
+    "customizations": {
+        "vscode": {
+            "extensions": [
+
+            ]
+        }
+    },
+    // コンテナ作成後にGitをインストール
+    "postCreateCommand": "apt-get update && apt-get install -y git && npm install",
+    "remoteUser": "node"
+}
